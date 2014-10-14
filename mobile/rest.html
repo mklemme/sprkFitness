@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sprk.fitness | Fitness tracking for the rest of us</title>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <link rel="stylesheet" href="http://sprk-platform.github.io/sprkFramework/engine/css/sprkFramework.css">
+  <link rel="stylesheet" href="../engine/css/base.css">
+
+</head>
+<body>
+<header>
+<div class="pure-g">
+  <div class="pure-u-1-2 nowTracking">Tracking: <span>Chest &amp; Biceps</span></div>
+  <div class="pure-u-1-2 endWorkout">
+    <a href="index.html">end workout <i class="fa fa-times"></i></a>
+  </div>
+</div>
+</header>
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h1 class="text-centered countdown">:<span>45</span></h1>
+    <p class="current"><span>Now: Incline Bench Press</span></p>
+    <p class="next"><span>Up next: Decline Bench Press</span></p>
+    <div class="action">
+      <a href="#" class="actionButton">Pause workout</a>
+    </div>
+
+  </div>
+</div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="../engine/js/app.js"></script>
+  <script>
+
+    var output = $('.countdown span');
+    var isPaused = false;
+
+    // If no rest value exisits, do 45 secs
+    var time = 45;
+    var t = window.setInterval(function() {
+        if(!isPaused && time > 0) {
+            time--;
+            output.text(time);
+            console.log(time);
+        } else if (time === 0){
+          clearInterval(t);
+          window.location.replace("index.html");
+        }
+    }, 1000);
+    $( ".actionButton" ).toggle(function(e) {
+        e.preventDefault();
+        isPaused = true;
+        $( ".actionButton" ).text("Resume Workout").addClass("resume");
+        $( "body" ).addClass( "paused" );
+    }, function(e) {
+        e.preventDefault();
+        isPaused = false;
+        $( ".actionButton" ).text("Pause Workout").removeClass("resume");
+        $( "body" ).removeClass( "paused" );
+    });
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+body{
+  min-height: 300px;
+  color: white;
+  background: #7bb367;
+  transition: all .2s;
+}
+
+::selection{
+  background:rgba(17,17,17,.2);
+  padding: 10px;
+  }
+body.paused{
+  background: #ad4d4d;
+}
+.pure-g{
+
+  max-width: 450px;
+  margin:auto;
+}
+.pure-u-1-2{
+  letter-spacing: 1px;
+}
+h1{
+  color: white;
+  font-size: 100px;
+  font-weight: 400;
+  margin: 80px 0;
+  font-family: "Proxima Nova Soft", sans-serif !important;
+}
+header{
+  margin-top: 40px;
+  font-size: 14px;
+}
+.nowTracking{
+  color: #d3f3c7;
+  transition: all .2s;
+}
+body.paused .nowTracking{
+  color: #f5adad;
+}
+.nowTracking span{
+  color: white;
+}
+
+.endWorkout{
+
+  text-align: right;
+}
+.endWorkout a{
+  text-decoration: none;
+  color: #d3f3c7;
+  transition: all .2s;
+}
+.endWorkout a .fa{
+  color: white;
+  margin-left: 5px;
+}
+body.paused .endWorkout a{
+
+  color: #f5adad;
+}
+.current{
+  font-size: 18px;
+  color: white;
+}
+.next{
+  font-size: 18px;
+  color: #b7dfaa;
+  transition: all .2s;
+}
+body.paused .next{
+  color: #f5adad;
+}
+.action{
+  text-align: center;
+}
+.actionButton{
+  margin-top: 80px;
+  vertical-align: middle;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: inline-block;
+  border-radius: 50px;
+  border: 3px solid white;
+  padding: 15px 35px;
+  transition: all .2s;
+}
+.actionButton:before{
+  margin-right: 15px;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  content:"\f04c";
+}
+.actionButton.resume:before{
+  content:"\f04b";
+}
+
+body.paused .actionButton{
+  background: white;
+  color: rgb(138, 137, 137);
+}
+
+.excercise h1{
+  text-align: left;
+  font-size: 34px;
+  margin: 80px 0 30px;
+}
+.excercise h2{
+  font-weight: 200;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+.excercise hr{
+  background: none;
+  border: none;
+  border-top: 1px solid #d3f3c7;
+  margin:80px 0 40px 0;
+}
+.excercise p{
+  margin:0 0 20px 0;
+  line-height: 30px;
+}
+.excercise .lastGoal span,
+.excercise .currentGoal span{
+  display: block;
+}
+.excercise .actionButton:before{
+  content:"\f00c";
+}
+
+
+
